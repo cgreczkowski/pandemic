@@ -25,6 +25,7 @@ void InfectionCard::Infect(string city, string color) {
 	// outbreak
 	//}
 	//else{
-	//	place 1 disease cube (color) at city
+	//	increment city's disease counter by 1
+	//	decrease remaining disease cubes of COLOR by 1
 	//}
 }

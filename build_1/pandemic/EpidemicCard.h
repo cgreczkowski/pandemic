@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "PlayerCard.h"
+#include "InfectionCard.h"
 
 #endif /* EpidemicCard_hp */
 
@@ -18,11 +19,11 @@ public:
     EpidemicCard();
     ~EpidemicCard();
     
-    void EventAction();
+    void EventAction(int& infectionRate, vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
     
-    void Increase();
-    void Infect();
-    void Intensify();
+    void Increase(int& infectionRate);
+    void Infect(vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
+    void Intensify(vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
 
 };
 

@@ -17,7 +17,10 @@
 const int nbplayers = 2;        // # Players to be instantiated ( 2 to 4)
 const int nbcardsplayer = 4;    // # Cards per player when game starts
 const int nbplayercards = 59;   // # PlayerCard's in the whole game
+const int diseaseCubesPerColor = 24;	// # of disease cubes of each color (96 total)
 
+//Infection rate, initialized to 1
+int infectionRate = 1;
 
 //Creates 4 reference cards needed in the game, put them in an array for access
 RefCard refcard1, refcard2, refcard3, refcard4;
@@ -47,6 +50,9 @@ std::vector <PlayerCard*> discardpile;
 
 //Creates <vector> infectiondeck that contains *InfectionCard
 std::vector <InfectionCard*> infectiondeck;
+
+//Creates <vector> infectiondeck that contains *InfectionCard DISCARD PILE
+std::vector <InfectionCard*> infectiondeck_discard;
 
 //Creates Array of *Player (to access players)
 Player* arrayofPlayers[nbplayers];
