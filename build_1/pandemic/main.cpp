@@ -18,13 +18,19 @@
 
 #include "Global.h"
 
+
+void initInfectionDeck() {
+	infectiondeck.insert(infectiondeck.end(), infectioncardarr, infectioncardarr + (sizeof(infectioncardarr) / sizeof(infectioncardarr[0])));
+
+	shuffle(infectiondeck.begin(), infectiondeck.end(), std::default_random_engine(std::random_device()()));
+}
 void setInitPlayerDeck(){
     playerdeck.insert(playerdeck.end(), citycardarr, citycardarr+(sizeof(citycardarr)/sizeof(citycardarr[0])));
     playerdeck.insert(playerdeck.end(), eventcardarr, eventcardarr+(sizeof(eventcardarr)/sizeof(eventcardarr[0])));
     
     //Rnd Shuffle playerdeck
     shuffle(playerdeck.begin(), playerdeck.end(), std::default_random_engine(std::random_device()()));
-    std::random_shuffle(playerdeck.begin(), playerdeck.end());
+    //std::random_shuffle(playerdeck.begin(), playerdeck.end());
     //    for(int i=0; i<playerdeck.size();i++){
     //        playerdeck[i]->printCard();
     //    }
