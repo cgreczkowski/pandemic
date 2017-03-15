@@ -54,4 +54,11 @@ void EpidemicCard::Intensify(vector<InfectionCard*>& infectiondeck, vector<Infec
 //Shuffle the cards in the infection discard pile and put them on top of the infection deck
 	shuffle(infectiondeck_discard.begin(), infectiondeck_discard.end(), std::default_random_engine(std::random_device()()));
 	infectiondeck.insert(infectiondeck.end(), infectiondeck_discard.begin(), infectiondeck_discard.end());
+
+	//clean up discard pile
+	// <vector> infectiondeck_discard contains *InfectionCard
+	for (int i = 0; i<infectiondeck_discard.size(); i++) {
+		infectiondeck_discard[i] = nullptr;
+		delete infectiondeck_discard[i];
+	}
 }
