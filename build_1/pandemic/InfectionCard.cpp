@@ -1,4 +1,5 @@
 #include "InfectionCard.h"
+#include <iostream>
 using namespace std;
 
 InfectionCard::InfectionCard() {
@@ -15,19 +16,15 @@ InfectionCard::~InfectionCard() {
 
 }
 
-void InfectionCard::initialInfect() {
-	//Infect according to the city and color, with level of intensity	
-	int i = 3;
-	while (i >= 1) {
-		//draw 3, then 2, then 1 infection cards and infect according to their city and color
-		for (int k = i; k < 0; k--) {
-			//k cards drawn
-			//TODO: increase CITYNAME's COLOR disease markers by i
-		}
-		i--;
-	}
-}
-
-void InfectionCard::Infect() {
-
+void InfectionCard::Infect(string city, string color) {
+	//takes a city string and color
+	//todo: change to city object
+	cout << "Infecting " << city << " with the " << color << " disease!" << endl;
+	//outbreak scenario?
+	//if(city) has 3 cubes{
+	// outbreak
+	//}
+	//else{
+	//	place 1 disease cube (color) at city
+	//}
 }

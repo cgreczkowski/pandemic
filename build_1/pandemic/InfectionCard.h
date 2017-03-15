@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 #include "Cards.h"
 using namespace std;
 
@@ -12,6 +13,5 @@ public:
 	
 
 	//action
-	void initialInfect();
-	void Infect();
+	void Infect(string city, string color);
 };

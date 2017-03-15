@@ -171,19 +171,42 @@ void addEpCardsPlayerDeck(){
     //Rnd Shuffle PlayerDeck
     shuffle(playerdeck.begin(), playerdeck.end(), std::default_random_engine(std::random_device()()));
 }
-
+void initialInfection() {
+	//draw 3, then 2, then 1 infection cards and infect according to their city and color
+	int i = 3;
+	while (i >= 1) {
+		for (int k = 3; k > 0; k--) {
+			//draw infection card from infection deck
+			InfectionCard* curr_inf = infectiondeck.back();
+			string city = curr_inf->getCardName();
+			string color = curr_inf->getCardTextFront();		
+			//infect the city
+			for (int j = 1; j <= i; j++) {
+				curr_inf->Infect(city, color);
+			}			
+			//add drawn card to discard pile
+			infectiondeck_discard.push_back(curr_inf);
+			//remove card from infection deck
+			infectiondeck.pop_back();
+		}
+		i--;
+	}	
+	system("pause");
+}
 
 void initGame(){
     
+	initInfectionDeck();
+
     setInitPlayerDeck();
     
     createRoles();
     
     addEpCardsPlayerDeck();
+
+	initialInfection();
     
 }
-
-
 
 void endGame(){
     
@@ -209,6 +232,17 @@ void endGame(){
         discardpile[i]=nullptr;
         delete discardpile[i];
     }
+
+	// <vector> infectiondeck contains *InfectionCard
+	for (int i = 0; i<infectiondeck.size(); i++) {
+		infectiondeck[i] = nullptr;
+		delete infectiondeck[i];
+	}
+	// <vector> infectiondeck_discard contains *InfectionCard
+	for (int i = 0; i<infectiondeck_discard.size(); i++) {
+		infectiondeck_discard[i] = nullptr;
+		delete infectiondeck_discard[i];
+	}
     
     
 }
