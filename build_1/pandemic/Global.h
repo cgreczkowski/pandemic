@@ -28,7 +28,7 @@ int remainingDiseaseCubes[4] = {diseaseCubesCount,diseaseCubesCount,diseaseCubes
 RefCard refcard1, refcard2, refcard3, refcard4;
 RefCard referencecards[] = { refcard1, refcard2, refcard3, refcard4 };
 
-Pawn pink("Pink"), orange("Orange"), white ("White"), brown("Brown"), palegreen("Pale Green"), darkgreen("Dark Green"), aqua("Aqua");
+//Pawn pink("Pink"), orange("Orange"), white ("White"), brown("Brown"), palegreen("Pale Green"), darkgreen("Dark Green"), aqua("Aqua");
 
 //Creates Role Cards (inherited from Cards)
 DispatcherCard dispatchercard1;
@@ -53,11 +53,8 @@ std::vector <PlayerCard*> discardpile;
 //Creates <vector> infectiondeck that contains *InfectionCard
 std::vector <InfectionCard*> infectiondeck;
 
-//Creates <vector> infectiondeck that contains *InfectionCard DISCARD PILE
-std::vector <InfectionCard*> infectiondeck_discard;
-
-//Creates Array of *Player (to access players)
-Player* arrayofPlayers[nbplayers];
+//Creates Array of *Pawn(to access pawn and players)
+Pawn* arrayofPawns[nbplayers];
 
 //Creates Array of *PlayerView objects (Observers) [1 for each player]
 PlayerView * arrayofPlayerViews[nbplayers];

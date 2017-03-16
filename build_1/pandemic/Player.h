@@ -13,19 +13,19 @@
 #include <algorithm>
 
 #include "Subject.h"
-#include "CardsPawnHeaders.h"
+//#include "CardsPawnHeaders.h"
 
 class Player : public Subject{
     
 protected:
+    std::string playername;
     RefCard* reference_card;
     Cards* role_card;
-    Pawn* pawn_co;
     std::vector<PlayerCard*> player_hand;
     
 public:
     Player();            /* Default Constructor */
-    Player(RefCard *refcard, Cards *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand); /*Constructor*/
+    Player(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand); /*Constructor*/
     Player(Player const& theplayer)  ;             /* Copy Constructor */
     virtual ~Player();
     
@@ -38,9 +38,8 @@ public:
     void setRoleCard(Cards &rc);
     void printRoleCard();
     
-    Pawn * getPawn() const;
-    void setPawn(Pawn &pa);
-    void printPawn();
+    std::string getPlayerName() const;
+    void printPlayerName();
     
     std::vector<PlayerCard*>  getHand() const;
     void setHand(std::vector<PlayerCard*> &ha);
@@ -49,6 +48,11 @@ public:
     void draw2pcards(std::vector<PlayerCard*> &plyrdeck);
     void discardCards();
     
+    void action();
+    void buildResearchStation();
+    void treatDisease();
+    void ShareKnowledge();
+    void discoverCure();
     
 };
 
@@ -58,7 +62,7 @@ public:
 class Dispatcher : public Player{
 public:
     Dispatcher( );
-    Dispatcher(RefCard *refcard, DispatcherCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Dispatcher(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Dispatcher(Dispatcher const& disp)  ;
     virtual ~Dispatcher();
     void moveAnyPawn();
@@ -68,7 +72,7 @@ public:
 class Medic : public Player{
 public:
     Medic();
-    Medic(RefCard *refcard, MedicCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Medic(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Medic (Medic const& med);
     virtual ~Medic();
     void removeCubesColor();
@@ -78,7 +82,7 @@ public:
 class Scientist : public Player{
 public:
     Scientist();
-    Scientist(RefCard *refcard, ScientistCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Scientist(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Scientist (Scientist const& scient);
     virtual ~Scientist();
     void discoverCure(); //base method will be overridden
@@ -88,7 +92,7 @@ public:
 class Researcher : public Player{
 public:
     Researcher();
-    Researcher(RefCard *refcard, ResearcherCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Researcher(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Researcher(Researcher const& research);
     virtual ~Researcher();
     void giveCityCard(); //argument: Citycard to give
@@ -98,7 +102,7 @@ public:
 class Operationsexpert : public Player{
 public:
     Operationsexpert();
-    Operationsexpert(RefCard *refcard, OperationsexpertCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Operationsexpert(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Operationsexpert(Operationsexpert const& opexpert);
     virtual ~Operationsexpert();
     void buildResearchStation();
@@ -109,7 +113,7 @@ public:
 class Quarantinespecialist : public Player{
 public:
     Quarantinespecialist();
-    Quarantinespecialist(RefCard *refcard, QuarantinespecialistCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Quarantinespecialist(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Quarantinespecialist(Quarantinespecialist const& qspecialist);
     virtual ~Quarantinespecialist();
     void preventOutbreaks();
@@ -120,7 +124,7 @@ public:
 class Contingencyplanner : public Player{
 public:
     Contingencyplanner();
-    Contingencyplanner(RefCard *refcard, ContingencyplannerCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand);
+    Contingencyplanner(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand);
     Contingencyplanner(Contingencyplanner const& cplanner);
     virtual ~Contingencyplanner();
     void takeEventCard();

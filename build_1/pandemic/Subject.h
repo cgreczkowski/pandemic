@@ -13,7 +13,7 @@
 
 #include "Observer.h"
 
-#include "CardsPawnHeaders.h"
+#include "CardsHeaders.h"
 
 class Subject {
 public:

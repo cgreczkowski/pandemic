@@ -36,7 +36,6 @@ void PlayerView::UpdateEpidemicCard(){
     displayEpidemicCard();
 }
 void PlayerView::display(){
-        p->printPawn();
         p->printRoleCard();
         p->printRefCard();
         p->printHand();

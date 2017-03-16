@@ -14,24 +14,25 @@ using namespace std;
 
 //Player - Default Constructor
 Player::Player(){
+    this->playername="";
     reference_card=nullptr;
     role_card=nullptr;
-    pawn_co=nullptr;
 }
 
+
 //Player - Constructor
-Player::Player(RefCard *refcard, Cards *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand){
+Player::Player(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand){
     reference_card=refcard;
     role_card=rolecard;
-    pawn_co=pawnc;
     player_hand=p_hand;
+    this->playername="";
 }
 
 
  Player::Player(Player const& theplayer){
+     playername=theplayer.playername;
  reference_card=theplayer.reference_card;
  role_card=theplayer.role_card;
- pawn_co=theplayer.pawn_co;
  player_hand=theplayer.player_hand;
  }
 
@@ -72,18 +73,11 @@ void Player::printRoleCard(){
         role_card->printCard();}
 }
 
-Pawn * Player::getPawn() const{
-    return pawn_co;
-}
-void Player::setPawn(Pawn &pa){
-    pawn_co=&pa;
+
+std::string  Player::getPlayerName() const{
+    return playername;
 }
 
-void Player::printPawn(){
-    if(pawn_co != nullptr){
-        pawn_co->printPawn();
-    }
-}
 
 std::vector<PlayerCard*>  Player::getHand() const{
     return player_hand;
@@ -103,6 +97,7 @@ void Player::printHand(){
 
 
 void Player::draw2pcards(std::vector<PlayerCard*> &plyrdeck){
+    std::cout<<"here";
     for(int k=0;k<2;k++){
         player_hand.push_back(plyrdeck.back());
         plyrdeck.pop_back();
@@ -125,6 +120,39 @@ void Player::discardCards(){
     NotifyDiscardHand();
 }
 
+void Player::action(){
+}
+
+void Player::buildResearchStation(){
+}
+
+void Player::treatDisease(){
+}
+
+void Player::ShareKnowledge(){
+}
+
+void Player::discoverCure(){
+}
+
+void action();
+void buildResearchStation();
+//if in same city as their player card, can build a research station there. if all research stations built, remove one from anywhere on the board
+void treatDisease();
+//remove 1 cube, if disease cured remove all 3 cubes
+
+void ShareKnowledge();
+//give the City card that matches the city you are in to another player
+//or take the City card that matches the city you are in from another player
+
+
+void discoverCure();
+//"At any research station, discard 5 City cards of the same color from your"
+//"hand to cure the disease of that color. Move the diseases cure marker to its"
+//"Cure Indicator."
+//"If no cubes of this color are on the board, this disease is now eradicated."
+//"Flip its cure marker from its vial side to its  side"
+
 
 
 //Class Implementations for each RolePlayer : Player
@@ -134,8 +162,8 @@ void Player::discardCards(){
 Dispatcher::Dispatcher( ){
     Player();
 }
-Dispatcher::Dispatcher(RefCard *refcard, DispatcherCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Dispatcher::Dispatcher(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Dispatcher::Dispatcher(Dispatcher const& disp){}
 Dispatcher::~Dispatcher(){}
@@ -147,8 +175,8 @@ void Dispatcher::moveAnotherPlayerPawn(){}
 Medic::Medic(){
     Player();
 }
-Medic::Medic(RefCard *refcard, MedicCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Medic::Medic(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Medic::Medic (Medic const& med){}
 Medic::~Medic(){}
@@ -160,8 +188,8 @@ void Medic::curedRemoveCubesColor(){}
 Scientist::Scientist(){
     Player();
 }
-Scientist::Scientist(RefCard *refcard, ScientistCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Scientist::Scientist(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Scientist::Scientist (Scientist const& scient){}
 Scientist::~Scientist(){}
@@ -171,8 +199,8 @@ void Scientist::discoverCure(){} //base method will be overridden
 Researcher::Researcher(){
     Player();
 }
-Researcher::Researcher(RefCard *refcard, ResearcherCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Researcher::Researcher(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Researcher::Researcher(Researcher const& research){}
 Researcher::~Researcher(){}
@@ -183,8 +211,8 @@ void Researcher::giveCityCard(){} //argument: Citycard to give
 Operationsexpert::Operationsexpert(){
     Player();
 }
-Operationsexpert::Operationsexpert(RefCard *refcard, OperationsexpertCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Operationsexpert::Operationsexpert(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Operationsexpert::Operationsexpert(Operationsexpert const& opexpert){}
 Operationsexpert::~Operationsexpert(){}
@@ -195,8 +223,8 @@ void Operationsexpert::moveResearchstationCity(){}
 Quarantinespecialist::Quarantinespecialist(){
     Player();
 }
-Quarantinespecialist::Quarantinespecialist(RefCard *refcard, QuarantinespecialistCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Quarantinespecialist::Quarantinespecialist(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Quarantinespecialist::Quarantinespecialist(Quarantinespecialist const& qspecialist){}
 Quarantinespecialist::~Quarantinespecialist(){}
@@ -207,8 +235,8 @@ void Quarantinespecialist::preventCubes(){}
 Contingencyplanner::Contingencyplanner(){
     Player();
 }
-Contingencyplanner::Contingencyplanner(RefCard *refcard, ContingencyplannerCard *rolecard, Pawn *pawnc, std::vector<PlayerCard*> p_hand):
-Player(refcard, rolecard, pawnc, p_hand)
+Contingencyplanner::Contingencyplanner(RefCard *refcard, Cards *rolecard, std::vector<PlayerCard*> p_hand):
+Player(refcard, rolecard, p_hand)
 {}
 Contingencyplanner::Contingencyplanner(Contingencyplanner const& cplanner){}
 Contingencyplanner::~Contingencyplanner(){}

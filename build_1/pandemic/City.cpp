@@ -3,59 +3,105 @@
 // namespace std;
 
 
-City::City() :Card("Atlanta")
+City::City()
 {
-
+    cityname="";
+    color="";
+    pcitycard=nullptr;
+    cubes=0;
+    researchstation=false;
+    //vector pawnsincity
 
 }
-City::City(string nam) : Card(nam)
+City::City(string cityname, string color, CityCard* pcitycard, int cubes, vector<Pawn*> pawnsincity)
 {
-	{
-		
-		infCubes = 0;
-	}
+    cityname=cityname;
+    color=color;
+    pcitycard=pcitycard;
+    cubes=0;
+    researchstation=0;
+    pawnsincity=pawnsincity;
 }
 
 
 City::~City()
 {
-
+   
 }
 
-double City::getPopulation()
+string City::getCityName(){
+    return cityname;
+}
+
+string City::getColor(){
+    return color;
+}
+
+int City::getCubes(){
+    return cubes;
+}
+
+vector<Pawn*> City::getPawnsInCity()
 {
-	return playerInCity.size();
+    return pawnsincity;
 }
 
-void City::addInfCubes()
+void City::addCubes()
 {
-	 ++infCubes;
+    cubes++;
 }
 
-void City::getPlayerInCity()
+void City::removeCubes(){
+    if(cubes>0)
+        cubes--;
+    else
+        cubes=0;
+}
+
+void City::add3Cubes(){
+    cubes+=3;
+}
+
+void City::removeAllCubes(){
+    cubes=0;
+}
+
+void City::addResearchStation(){
+    researchstation=true;
+}
+
+void City::removeResearchStation(){
+    researchstation=false;
+}
+
+void City::addPawnsToCity(Pawn* pa)
 {
-	vector<Player> ::iterator itr = playerInCity.begin();
-	/
-	for (int i = 0; i < playerInCity.size(); i++) {
-		//Card *rc = playerInCity[i].getRoleCard();
-		//cout << rc->getCardName() << endl;
-	}
+    pawnsincity.push_back(pa);
 }
 
+void City::removePawnFromCity(Pawn* pa){
+    for(int i=0;i<pawnsincity.size();i++){
+        if(pawnsincity[i]==pa)
+            pawnsincity.erase(pawnsincity.begin() + i);
+    }
+    
+}
 
-void City::toString()
+void City::printListPlayersInCity(){
+    for(int i=0;i<pawnsincity.size();i++){
+        cout<<pawnsincity[i]->getPawnPlayerName()<<endl;
+    }
+}
+
+void City::print()
 {
 	//cardColor;
-	cout << " City Card: " + getCardName() << "  ";
+    cout << " City Card: "<< pcitycard->getCardName() << endl;
 	//RefCard ref = getPlayerInCity();
-	cout << "List of players in city :";
-	getPlayerInCity();
+    cout << "List of players in city :"<<endl;
+    printListPlayersInCity();
 
-	cout << "the number of infection in city" << infCubes;
+	cout << "the number of infection in city:" << cubes <<endl;
 
 }
 
-void City::addPlayerToCity(Player pl)
-{
-	playerInCity.push_back(pl);
-}

@@ -8,16 +8,26 @@
 #ifndef PAWN_H_
 #define PAWN_H_
 
+
 #include <iostream>
+//#include "Player.h"
+
+#include "Player.h"
 
 class Pawn {
 public:
     Pawn();
-    Pawn(std::string pcolor);
+    Pawn(std::string color, Player* p);
     ~Pawn();
     void printPawn();
+    std::string getPawnColor();
+    std::string getPawnPlayerName();
+    Player* getPawnPlayer();
+    Player* p;
+    
 protected:
-    std::string pawncolor;
+    std::string color;
+    
     
 };
 

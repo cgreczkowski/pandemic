@@ -8,8 +8,12 @@
 #include "Pawn.h"
 #include <string>
 
-Pawn::Pawn(std::string pcolor) {
-    pawncolor=pcolor;
+Pawn::Pawn(){}
+
+Pawn::Pawn(std::string color, Player* p) {
+    this->color=color;
+    this->p=p;
+    //pplayer=pplayer;
 }
 
 Pawn::~Pawn(){
@@ -18,7 +22,20 @@ Pawn::~Pawn(){
 
 void Pawn::printPawn(){
     std::cout<<"----------------------------------------"<<std::endl;
-    std::cout<<"Pawn: " << this->pawncolor <<std::endl;
+    std::cout<<"Pawn: " << this->color <<std::endl;
+    //std::cout<<getPlayerName()<<std::endl;
     std::cout<<"----------------------------------------\n\n"<<std::endl;
     
+}
+
+std::string Pawn::getPawnColor(){
+    return color;
+}
+
+std::string Pawn::getPawnPlayerName(){
+    return (p->getPlayerName());
+}
+
+Player* Pawn::getPawnPlayer(){
+    return p;
 }

@@ -14,7 +14,7 @@
 #include <random>
 
 #include "PlayerView.h"
-#include "CardsPawnHeaders.h"
+#include "CardsHeaders.h"
 
 #include "Global.h"
 
@@ -66,7 +66,7 @@ void createRoles(){
     }
     
     
-    // FOR EACH PLAYER...
+    // FOR EACH PAWN (PLAYER)...
     // Distributes actual role with switch(rndnumber)
     // Call corresponding Role Player constructor
     // then distribute PlayerCard's from the <vector> playerdeck to the <vector> player hand
@@ -79,80 +79,87 @@ void createRoles(){
         
         switch(arrcheck[i]){
             case 0:{
-                Dispatcher* dispatcher = new Dispatcher(&referencecards[i], &dispatchercard1, &pink, dispatcherhand);
+                Dispatcher* dispatcher = new Dispatcher(&referencecards[i], &dispatchercard1, dispatcherhand);
                 for (int k = 0; k < nbcardsplayer; k++) {
                     dispatcherhand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i] = dispatcher;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(dispatcherhand);
+                arrayofPlayerViews[i] = new PlayerView(dispatcher);
+                dispatcher->setHand(dispatcherhand);
+                Pawn* dispatcherpawn = new Pawn("pink", dispatcher);
+                arrayofPawns[i]=dispatcherpawn;
                 break;
             }
             case 1:{
-                Medic* medic=new Medic(&referencecards[i], &mediccard1, &orange, medichand);
+                Medic* medic=new Medic(&referencecards[i], &mediccard1, medichand);
                 for(int k=0;k<nbcardsplayer;k++){
                     medichand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i]=medic;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(medichand);
+                arrayofPlayerViews[i] = new PlayerView(medic);
+                medic->setHand(medichand);
+                Pawn* medicpawn = new Pawn("orange", medic);
+                arrayofPawns[i]=medicpawn;
                 break;
             }
             case 2:{
-                Scientist* scientist=new Scientist(&referencecards[i], &scientistcard1, &white, scientisthand);
+                Scientist* scientist=new Scientist(&referencecards[i], &scientistcard1, scientisthand);
                 for(int k=0;k<nbcardsplayer;k++){
                     scientisthand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i]=scientist;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(scientisthand);
+                arrayofPlayerViews[i] = new PlayerView(scientist);
+                scientist->setHand(scientisthand);
+                Pawn* scientistpawn = new Pawn("white", scientist);
+                arrayofPawns[i]=scientistpawn;
                 break;
             }
             case 3:{
-                Researcher* researcher=new Researcher(&referencecards[i], &researchercard1, &brown, researcherhand);
+                Researcher* researcher=new Researcher(&referencecards[i], &researchercard1, researcherhand);
                 for(int k=0;k<nbcardsplayer;k++){
                     researcherhand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i]=researcher;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(researcherhand);
+                arrayofPlayerViews[i] = new PlayerView(researcher);
+                researcher->setHand(researcherhand);
+                Pawn* researcherpawn = new Pawn("brown", researcher);
+                arrayofPawns[i]=researcherpawn;
                 break;
             }
             case 4:{
-                Operationsexpert* operationsexpert=new Operationsexpert(&referencecards[i], &operationsexpertcard1, &palegreen, operationsexperthand);
+                Operationsexpert* operationsexpert=new Operationsexpert(&referencecards[i], &operationsexpertcard1, operationsexperthand);
                 for(int k=0;k<nbcardsplayer;k++){
                     operationsexperthand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i]=operationsexpert;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(operationsexperthand);
+                arrayofPlayerViews[i] = new PlayerView(operationsexpert);
+                operationsexpert->setHand(operationsexperthand);
+                Pawn* operationsexpertpawn = new Pawn("palegreen", operationsexpert);
+                arrayofPawns[i]=operationsexpertpawn;
                 break;
             }
             case 5:{
-                Quarantinespecialist* quarantinespecialist=new Quarantinespecialist(&referencecards[i], &quarantinespecialistcard1, &darkgreen, quarantinespecialisthand);
+                Quarantinespecialist* quarantinespecialist=new Quarantinespecialist(&referencecards[i], &quarantinespecialistcard1, quarantinespecialisthand);
                 for(int k=0;k<nbcardsplayer;k++){
                     quarantinespecialisthand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i]=quarantinespecialist;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(quarantinespecialisthand);
+                arrayofPlayerViews[i] = new PlayerView(quarantinespecialist);
+                quarantinespecialist->setHand(quarantinespecialisthand);
+                Pawn* quarantinespecialistpawn = new Pawn("darkgreen", quarantinespecialist);
+                arrayofPawns[i]=quarantinespecialistpawn;
                 break;
             }
             case 6:{
-                Contingencyplanner* contingencyplanner=new Contingencyplanner(&referencecards[i], &contingencyplannercard1, &aqua, contingencyplannerhand);
+                Contingencyplanner* contingencyplanner=new Contingencyplanner(&referencecards[i], &contingencyplannercard1,  contingencyplannerhand);
                 for(int k=0;k<nbcardsplayer;k++){
                     contingencyplannerhand.push_back(playerdeck.back());
                     playerdeck.pop_back();
                 }
-                arrayofPlayers[i]=contingencyplanner;
-                arrayofPlayerViews[i] = new PlayerView(arrayofPlayers[i]);
-                arrayofPlayers[i]->setHand(contingencyplannerhand);
+                arrayofPlayerViews[i] = new PlayerView(contingencyplanner);
+                contingencyplanner->setHand(contingencyplannerhand);
+                Pawn* contingencyplannerpawn = new Pawn("aqua", contingencyplanner);
+                arrayofPawns[i]=contingencyplannerpawn;
                 break;
             }
             default:{
@@ -216,10 +223,10 @@ void endGame(){
         delete arrayofPlayerViews[i];
     }
     
-    // <vector> arrayofPlayers contains all *Player
+    // <vector> arrayofPawns contains all *Pawn
     for(int i=0; i<nbplayers;i++){
-        arrayofPlayers[i]=nullptr;
-        delete arrayofPlayers[i];
+        arrayofPawns[i]=nullptr;
+        delete arrayofPawns[i];
     }
     
     // <vector> playerdeck contains *PlayerCard
@@ -253,12 +260,12 @@ void endGame(){
 int main(){
     
     initGame();
-    
-    //arrayofPlayers[0]->draw2pcards(playerdeck);
-     //arrayofPlayers[0]->draw2pcards(playerdeck);
-    // arrayofPlayers[0]->draw2pcards(playerdeck);
-    
-   // arrayofPlayers[1]->draw2pcards(playerdeck);
+
+    //test lines (draw cards)
+    (arrayofPawns[0]->getPawnPlayer())->draw2pcards(playerdeck);
+    (arrayofPawns[0]->getPawnPlayer())->draw2pcards(playerdeck);
+    (arrayofPawns[0]->getPawnPlayer())->draw2pcards(playerdeck);
+    (arrayofPawns[0]->getPawnPlayer())->draw2pcards(playerdeck);
     
     endGame();
 }

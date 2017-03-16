@@ -10,8 +10,10 @@
 
 #include <iostream>
 #include <string>
-#include "Observer.h"
-#include "Player.h"
+#include "City.h"
+//#include "Observer.h"
+//#include "Player.h"
+
 #include <vector>
 #include <iterator>
 
