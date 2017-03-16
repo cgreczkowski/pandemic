@@ -16,16 +16,36 @@ InfectionCard::~InfectionCard() {
 
 }
 
-void InfectionCard::Infect(string city, string color) {
+void InfectionCard::Infect(int* remainingDiseaseCubes, string city, string color) {
 	//takes a city string and color
+	//are there enough remaining disease cubes?
+	bool enoughCubes = true;
+	if (color == "blue" && remainingDiseaseCubes[0] == 1) {
+		enoughCubes = false;
+	}
+	else if (color == "yellow" && remainingDiseaseCubes[1] == 1) {
+		enoughCubes = false;
+	}
+	else if (color == "black" && remainingDiseaseCubes[2] == 1) {
+		enoughCubes = false;
+	}
+	else if (color == "red" && remainingDiseaseCubes[3] == 1) {
+		enoughCubes = false;
+	}
 	//todo: change to city object
-	cout << "Infecting " << city << " with the " << color << " disease!" << endl;
-	//outbreak scenario?
-	//if(city) has 3 cubes{
-	// outbreak
-	//}
-	//else{
-	//	increment city's disease counter by 1
-	//	decrease remaining disease cubes of COLOR by 1
-	//}
+	if (enoughCubes) {
+		cout << "Infecting " << city << " with the " << color << " disease!" << endl;
+		//outbreak scenario?
+		//if(city) has 3 cubes{
+		// outbreak
+		//}
+		//else{
+		//	increment city's disease counter by 1
+		//	decrease remaining disease cubes of COLOR by 1
+		//}
+	}
+	else {
+		cout << "There are no more " << color << " disease cubes! Game over!" << endl;
+		//todo: handle gameover 
+	}
 }

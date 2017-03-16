@@ -21,11 +21,8 @@ const int diseaseCubesCount = 24; // # of disease cubes per color disease
 
 //Infection rate, initialized to 1
 int infectionRate = 1;
-//remaining disease cubes
-int blueDiseaseCubes = diseaseCubesCount; 
-int yellowDiseaseCubes = diseaseCubesCount;
-int blackDiseaseCubes = diseaseCubesCount;
-int redDiseaseCubes = diseaseCubesCount;
+//remaining disease cubes (blue, yellow, black, red)
+int remainingDiseaseCubes[4] = {diseaseCubesCount,diseaseCubesCount,diseaseCubesCount,diseaseCubesCount };
 
 //Creates 4 reference cards needed in the game, put them in an array for access
 RefCard refcard1, refcard2, refcard3, refcard4;

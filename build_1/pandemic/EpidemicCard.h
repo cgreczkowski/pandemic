@@ -19,10 +19,10 @@ public:
     EpidemicCard();
     ~EpidemicCard();
     
-    void EventAction(int& infectionRate, vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
+    void EventAction(int *remainingDiseaseCubes, int& infectionRate, vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
     
     void Increase(int& infectionRate);
-    void Infect(vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
+    void Infect(int *remainingDiseaseCubes, vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
     void Intensify(vector<InfectionCard*>& infectiondeck, vector<InfectionCard*>& infectiondeck_discard);
 
 };

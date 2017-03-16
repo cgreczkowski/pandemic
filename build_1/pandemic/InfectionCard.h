@@ -13,5 +13,5 @@ public:
 	
 
 	//action
-	void Infect(string city, string color);
+	void Infect(int* remainingDiseaseCubes,string city, string color);
 };

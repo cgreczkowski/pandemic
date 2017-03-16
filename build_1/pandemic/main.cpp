@@ -182,7 +182,7 @@ void initialInfection() {
 			string color = curr_inf->getCardTextFront();		
 			//infect the city
 			for (int j = 1; j <= i; j++) {
-				curr_inf->Infect(city, color);
+				curr_inf->Infect(remainingDiseaseCubes, city, color);
 			}			
 			//add drawn card to discard pile
 			infectiondeck_discard.push_back(curr_inf);
