@@ -53,6 +53,9 @@ std::vector <PlayerCard*> discardpile;
 //Creates <vector> infectiondeck that contains *InfectionCard
 std::vector <InfectionCard*> infectiondeck;
 
+//Creates <vector> infectiondeck that contains *InfectionCard DISCARD PILE
+std::vector <InfectionCard*> infectiondeck_discard;
+
 //Creates Array of *Pawn(to access pawn and players)
 Pawn* arrayofPawns[nbplayers];
 
