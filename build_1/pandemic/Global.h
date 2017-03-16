@@ -17,10 +17,15 @@
 const int nbplayers = 2;        // # Players to be instantiated ( 2 to 4)
 const int nbcardsplayer = 4;    // # Cards per player when game starts
 const int nbplayercards = 59;   // # PlayerCard's in the whole game
-const int diseaseCubesPerColor = 24;	// # of disease cubes of each color (96 total)
+const int diseaseCubesCount = 24; // # of disease cubes per color disease
 
 //Infection rate, initialized to 1
 int infectionRate = 1;
+//remaining disease cubes
+int blueDiseaseCubes = diseaseCubesCount; 
+int yellowDiseaseCubes = diseaseCubesCount;
+int blackDiseaseCubes = diseaseCubesCount;
+int redDiseaseCubes = diseaseCubesCount;
 
 //Creates 4 reference cards needed in the game, put them in an array for access
 RefCard refcard1, refcard2, refcard3, refcard4;
