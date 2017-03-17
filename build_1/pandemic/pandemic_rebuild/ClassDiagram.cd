@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Cards">
+    <Position X="37.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IIAAAAIgAAAAQQABAAAAAAAIIAAAAAAECAAEAEAAAgA=</HashCode>
+      <FileName>Cards.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="City">
+    <Position X="72.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAQAABIAABAAIAEAggAABAlAACCCAAAAAiABAAgA=</HashCode>
+      <FileName>City.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CityCard">
+    <Position X="35" Y="8" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAQAAAAAAACAAAAAAA=</HashCode>
+      <FileName>CityCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlueCity">
+    <Position X="26.75" Y="11" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CityCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YellowCity">
+    <Position X="32.25" Y="11" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>CityCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackCity">
+    <Position X="37.75" Y="11" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAA=</HashCode>
+      <FileName>CityCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedCity">
+    <Position X="43.25" Y="11" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAA=</HashCode>
+      <FileName>CityCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EpidemicCard">
+    <Position X="3.75" Y="8" Width="9.5" />
+    <TypeIdentifier>
+      <HashCode>AAASEAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>EpidemicCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventCard">
+    <Position X="18" Y="8" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>EventCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airlift">
+    <Position X="14" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>EventCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OneQuietNight">
+    <Position X="16.5" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GovernmentGrant">
+    <Position X="19" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResilientPopulation">
+    <Position X="21.5" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>EventCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Forecast">
+    <Position X="24.25" Y="10.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>EventCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GraphMap">
+    <Position X="74.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Typedef Name="GraphMap::vmap" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphMap.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="GraphMap::cMap" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphMap.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAQIIAIAQAABACACAAAAQCAEAAAACAAAAAAAAAQAAA=</HashCode>
+      <FileName>GraphMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Save">
+    <Position X="76.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SaveLoad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InfectionCard">
+    <Position X="51" Y="5.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAACAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InfectionCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Observer">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAAAAAAABAAAAAAAAACAgAAAAAAAACAA=</HashCode>
+      <FileName>Observer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pawn">
+    <Position X="69.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgggAAIAAAAAAAAAAgACABEAAAAAAAAA=</HashCode>
+      <FileName>Pawn.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="20" Y="17.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>IAgABQgAAACADQQUkAAACAIgAgAAAIAAAAAAARAAAJA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dispatcher">
+    <Position X="2.25" Y="24.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAEAAAAACAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Medic">
+    <Position X="8" Y="24.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAQAAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scientist">
+    <Position X="13.5" Y="24.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Researcher">
+    <Position X="19" Y="24.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Operationsexpert">
+    <Position X="24.75" Y="24.25" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAABAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Quarantinespecialist">
+    <Position X="30.75" Y="24.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAIQA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Contingencyplanner">
+    <Position X="37" Y="24.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerCard">
+    <Position X="23.5" Y="5.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlayerCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerView">
+    <Position X="0.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAEAAAAAAAAAAAAAAEEAQCAgAEAAAEAAgAA=</HashCode>
+      <FileName>PlayerView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RefCard">
+    <Position X="48.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RefCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoleCard">
+    <Position X="63" Y="5.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DispatcherCard">
+    <Position X="67.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MedicCard">
+    <Position X="69.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScientistCard">
+    <Position X="72" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResearcherCard">
+    <Position X="56.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OperationsexpertCard">
+    <Position X="59" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuarantinespecialistCard">
+    <Position X="61.75" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ContingencyplannerCard">
+    <Position X="64.75" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoleCard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Subject">
+    <Position X="21.25" Y="13.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QACAQAAAAAAAAAIAAIAAAAAAAIAAAABAAAAAAAAACAA=</HashCode>
+      <FileName>Subject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="vertex">
+    <Position X="71" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAAAAAACAAA=</HashCode>
+      <FileName>GraphMap.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
